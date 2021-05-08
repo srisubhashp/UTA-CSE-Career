@@ -1,5 +1,5 @@
 //Sri Subhash Pathuri; UTA-Id: 1001733778
-
+//Coding Assignment 6
 // House class header file template
 
 /* add the necessary includes */
@@ -25,8 +25,12 @@ class House
 		House(std::string Name, std::map<int,std::string>CandyRanking);
 
 		/* create the prototype for ringDoorbell() based on House.cpp */
-		std::string ringDoorbell(std::ostringstream &path);
-	private :
+		virtual std::string ringDoorbell(std::ostringstream &path) = 0;// we are making this a virtual function inorder to make this class virtual 
+	
+		//initializing the destructor
+		~House();
+	
+	protected:
 		std::string houseName;
 		std::mutex door;/* declare a mutex named door */
 		std::map<int,std::string> CandyRankingMap;/* declare a map named CandyRankingMap of type int,string */

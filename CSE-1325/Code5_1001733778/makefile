@@ -1,6 +1,5 @@
-#Sri Subhash Pathuri- 1001733778
-#makefile for Coding Assignment 5
-
+#This makefile is for Code project 5 for Donna French, due 12/01
+#Sri Subhash Pathuri
 SRC1 = Code5_1001733778.cpp
 SRC2 = TrickOrTreater.cpp
 SRC3 = House.cpp
@@ -9,21 +8,17 @@ OBJ2 = $(SRC2:.cpp=.o)
 OBJ3 = $(SRC3:.cpp=.o)
 EXE = $(SRC1:.cpp=.e)
 
-HFILES = TrickOrTreater.h House.h
+CFLAGS = -g -std=c++11 -pthread
 
-CFLAGS = -g -std=c++11
+HFILES = TrickOrTreater.h House.h
 
 all : $(EXE)
  
-$(EXE): $(OBJ1) $(OBJ2) $(OBJ3) 
-	g++ $(CFLAGS) $(OBJ1) $(OBJ2) $(OBJ3) -o $(EXE)
-
+$(EXE): $(OBJ1) $(OBJ2) $(OBJ3)
+	g++ $(CFLAGS) $(OBJ1) $(OBJ2) $(OBJ3) -o $(EXE) 
 $(OBJ1) : $(SRC1)
-	g++ -c $(CFLAGS) $(SRC1) -o $(OBJ1)
-	
+	g++ -c $(CFLAGS) $(SRC1) -o $(OBJ1) 
 $(OBJ2) : $(SRC2)
-	g++ -c $(CFLAGS) $(SRC2) -o $(OBJ2)
-	
+	g++ -c $(CFLAGS) $(SRC2) -o $(OBJ2) 
 $(OBJ3) : $(SRC3)
-	g++ -c $(CFLAGS) $(SRC3) -o $(OBJ3)
-
+	g++ -c $(CFLAGS) $(SRC3) -o $(OBJ3) 
